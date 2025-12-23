@@ -12,7 +12,7 @@ You can install the development version of MR.DEEM from GitHub with:
 
 ``` r
 install.packages("devtools")
-devtools::install_github("ruoyuwang-stats/MR.DEEM")
+devtools::install_github("ryw-stats/MR.DEEM")
 ```
 
 After installation, load the package:
