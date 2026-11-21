@@ -61,7 +61,7 @@ prepare.DEEM <- function(SumData, com_list, LD_Ref, Blocks, ns, ne, no, p_thr = 
       if (length(LD_Ref[[i]][[j]]) == 0) {
         next
       } else if (length(LD_Ref[[i]][[j]]) == 1) {
-        LD_Ref[[i]][[j]] <- 1
+        LD_Ref[[i]][[j]] <- matrix(1, 1L, 1L)
       } else {
         LD_Ref[[i]][[j]] <- (1 - 1e-3) * LD_Ref[[i]][[j]] + diag(1e-3, nrow(LD_Ref[[i]][[j]]))
       }
@@ -122,7 +122,6 @@ prepare.DEEM <- function(SumData, com_list, LD_Ref, Blocks, ns, ne, no, p_thr = 
       next
     }
 
-    q[2] <- q[2] + sum(sel)
     Phi_y <- as.vector(sqrt(sigma_y_B^2 + Gamma_h_B^2 / (no - 2)))
     M_tmp <- Phi_y^{-1} * R
     M_tmp <- Phi_y * t(M_tmp)
